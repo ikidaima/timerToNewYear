@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Счетчик до Нового Года</title>
+  <link rel="stylesheet" href="./css/style.css">
+  <link rel="apple-touch-icon" sizes="180x180" href="./favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="./favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="./favicon/favicon-16x16.png">
+  <link rel="manifest" href="./favicon/site.webmanifest">
+  <link rel="mask-icon" href="./favicon/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="theme-color" content="#ffffff">
+  <script>
+    const vh = window.innerHeight * 0.01;
+
+    document.documentElement.style.setProperty('--vh', `${vh}px`);
+
+    (function() {
+      window.addEventListener("resize", resizeThrottler, false);
+
+      var resizeTimeout;
+      function resizeThrottler() {
+
+        if ( !resizeTimeout ) {
+          resizeTimeout = setTimeout(function() {
+            resizeTimeout = null;
+            actualResizeHandler();
+          }, 66);
+        }
+      }
+
+      function actualResizeHandler() {
+        const vh = window.innerHeight * 0.01;
+        
+        document.documentElement.style.setProperty('--vh', `${vh}px`);
+      }
+    }());
+
+  </script>
+</head>
+<body>
+  <section class="timer">
+    <h1 class="timer__title">
+      <img class="timer__title-hat" src="./img/pngegg.png" alt="hut">
+      До нового года осталось
+    </h1>
+
+    <div class="timer__wrapper-clock">
+      <div class="clock">
+        <div class="clock__section">
+          <div class="clock__segments-wrapper">
+            <div class="clock__segment js-hundredDay">
+              <div class="clock__segment-top js-hundrenDayTop">0</div>
+              <div class="clock__segment-down js-hundrenDayDown">0</div>
+            </div>
+            <div class="clock__segment js-tenDay">
+              <div class="clock__segment-top js-tenDayTop">0</div>
+              <div class="clock__segment-down js-tenDayDown">0</div>
+            </div>
+            <div class="clock__segment js-unitDay">
+              <div class="clock__segment-top js-unitDayTop">0</div>
+              <div class="clock__segment-down js-unitDayDown">0</div>
+            </div>
+          </div>
+          <p class="clock__description js-descriptionDay">Дней</p>
+        </div>
+        <div class="clock__section">
+          <div class="clock__segments-wrapper">
+            <div class="clock__segment js-tenHour">
+              <div class="clock__segment-top js-tenHourTop">0</div>
+              <div class="clock__segment-down js-tenHourDown">0</div>
+            </div>
+            <div class="clock__segment js-unitHour">
+              <div class="clock__segment-top js-unitHourTop">0</div>
+              <div class="clock__segment-down js-unitHourDown">0</div>
+            </div>
+          </div>
+          <p class="clock__description js-descriptionHour">Часов</p>
+        </div>
+        <div class="clock__section">
+          <div class="clock__segments-wrapper">
+            <div class="clock__segment js-tenMinute">
+              <div class="clock__segment-top js-tenMinuteTop">0</div>
+              <div class="clock__segment-down js-tenMinuteDown">0</div>
+            </div>
+            <div class="clock__segment js-unitMinute">
+              <div class="clock__segment-top js-unitMinuteTop">0</div>
+              <div class="clock__segment-down js-unitMinuteDown">0</div>
+            </div>
+          </div>
+          <p class="clock__description js-descriptionMinute">Минут</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <script src="./js/creatElement.js"></script>
+  <script src="./js/NextDigit.js"></script>
+  <script src="./js/index.js"></script>
+</body>
+</html>
