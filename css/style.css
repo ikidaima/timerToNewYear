@@ -154,6 +154,19 @@ body {
   text-align: center;
 }
 
+.audio-button {
+  position: fixed;
+  left: 2vh;
+  bottom: 2vh;
+  width: 6vh;
+  height: 6vh;
+  padding: 1vh;
+  border: 3px solid #fff;
+  border-radius: 50%;
+  background-color: transparent;
+}
+
+
 @keyframes rotate-plate-front {
   50% {
     visibility: hidden;

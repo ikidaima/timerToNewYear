@@ -70,11 +70,14 @@
     hour: document.querySelector('.js-descriptionHour'),
     minute: document.querySelector('.js-descriptionMinute')
   }
+  const snowFall = new SnowFall;
 
   changeTimer( compareSateTimer(currentStateOfTimer, getNewTimerValue()) );
   setInterval(() => {
     changeTimer( compareSateTimer(currentStateOfTimer, getNewTimerValue()) );
   }, DELAY);
+
+  snowFall.render('body');
 
   function getNewTimerValue() {
     const currentTime = new Date();
